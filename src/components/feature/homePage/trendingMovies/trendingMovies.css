@@ -1,0 +1,70 @@
+.movie-list-section {
+    position: relative;
+    margin-top: 2.5rem;
+    min-height: 50vh;
+    padding: 2rem 4.25rem 3rem 4.25rem;
+}
+.trending-movies-section {
+    background: linear-gradient(180deg, rgba(53,62,64,0) 0%, rgba(41,50,65,1) 50%);
+}
+.movie-list-section-decor {
+    margin-top: 2rem;
+    width: 10px;
+    height: 100%;
+    padding: 1.5rem 0;
+    position: absolute;
+    left: 3rem;
+    top: 0;
+}
+.trending-movies-decor {
+    background:  linear-gradient(rgb(122, 122, 122), #293241, rgb(38, 46, 59, 0));
+}
+.title {
+    display: flex;
+    align-items:baseline;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.title-text {
+    color: white;
+    font-size: 1.725rem;
+    padding: 0.5rem 0.25rem 0 0.1rem;
+}
+.title-text:hover ~ .title-extra-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+.title-extra-text {
+    color: white;
+    font-weight: 500;
+    font-size: 1.275rem;
+    margin-left: 0.5rem;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 0.1s ease-out 0.05s;
+    transition: transform 0.15s ease-in;
+}
+.title-chevron {
+    height: 0.725rem;
+}
+.horizontal-movies-list {
+    width: 99%;
+    margin-left: 2.725rem;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+}
+.horizontal-movies-list::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    border-radius: 12px;
+}
+.horizontal-movies-list::-webkit-scrollbar-track {
+    background: rgba(13, 16, 20, 0.9);
+}
+.horizontal-movies-list::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.horizontal-movies-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
