@@ -1,3 +1,97 @@
-.single-page-section {
-    min-height: 90vh;
+.single-movie-page-container {
+    min-height: 80vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 93.27%);
+    display: grid;
+}
+
+.movie-details-container {
+    background: linear-gradient(281.07deg, rgba(41, 50, 65, 0.5) 72.09%, rgba(41, 50, 65, 0) 87.77%);
+    width: 75%;
+    margin: auto;
+    display: flex;
+    padding: 2rem 0;
+}
+.single-movie-poster {
+    width: 30%;
+    margin-right: 1rem;
+}
+.single-movie-detail-container {
+    color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+.single-movie-detail-container > h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.single-movie-details-extra-title-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+}
+.single-movie-details-percent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    height: 3.725rem;
+    padding-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+}
+.single-movie-genres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 1rem;
+}
+.single-movie-genres p {
+    background-color: #646c79;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+.single-movie-genres p:hover {
+    border-radius: 0;
+    background-color: #454a53;
+}
+
+.single-movie-overview {
+    margin-top: 1rem;
+    padding-right: 5rem;
+}
+.single-movie-overview > h2 {
+    font-size: 1.5rem;
+    color: #FAFAFA;
+}
+.single-movie-overview-tagline {
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+
+
+/* Misc percent background colours */
+.percent-high {
+    background: linear-gradient(90.8deg, #8BAF88 25.29%, rgba(103, 142, 99, 0) 124.4%);
+}
+.percent-medium {
+    background: linear-gradient(90.8deg, #AFAF88 25.29%, rgba(142, 138, 99, 0) 124.4%);
+}
+.percent-low {
+    background: linear-gradient(90.8deg, #AF8888 25.29%, rgba(142, 99, 99, 0) 124.4%);
 }

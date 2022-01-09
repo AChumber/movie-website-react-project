@@ -49,10 +49,11 @@
 }
 .horizontal-movies-list {
     width: 99%;
-    margin-left: 2.725rem;
+    margin-left: 1rem;
     overflow-x: scroll;
     display: flex;
     flex-direction: row;
+    padding: 1rem 0 0 1rem;
 }
 .horizontal-movies-list::-webkit-scrollbar {
     width: 5px;
