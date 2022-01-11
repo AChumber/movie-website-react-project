@@ -1,5 +1,5 @@
 .single-movie-page-container {
-    min-height: 80vh;
+    min-height: 70vh;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 93.27%);
     display: grid;
 }
@@ -12,7 +12,7 @@
     padding: 2rem 0;
 }
 .single-movie-poster {
-    width: 30%;
+    width: 25%;
     margin-right: 1rem;
 }
 .single-movie-detail-container {
@@ -48,8 +48,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 40%;
     margin-top: 1rem;
+}
+.single-movie-genres-large {
+    width: 40%;
+}
+.single-movie-genres-small {
+    width: 25%;
 }
 .single-movie-genres p {
     background-color: #646c79;
@@ -67,21 +72,33 @@
     margin-top: 1rem;
     padding-right: 5rem;
 }
-.single-movie-overview > h2 {
-    font-size: 1.5rem;
-    color: #FAFAFA;
+.single-movie-overview p {
+    color: #eeeeee;
 }
 .single-movie-overview-tagline {
     font-style: italic;
     margin-top: 0.5rem;
 }
 
-.cast-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.extra-detail-title {
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    font-weight: bold;
+    margin-top: 1rem;
 }
-
-
+.single-movie-container {
+    width: 90%;
+    margin: auto;
+}
+.single-movie-director-writer {
+    margin-top: 1.5rem;
+}
+.single-movie-writer-container {
+    margin-top: 0.5rem;
+}
+.single-movie-watch-providers {
+    margin-top: 1.5rem;
+}
 
 
 

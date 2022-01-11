@@ -1,0 +1,16 @@
+.movie-provider {
+    width: 5rem;
+    background-color: #333C4A;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+.movie-provider-logo-img {
+    width: 100%;
+}
+.movie-providers-list {
+    margin-top: 0.25rem;
+    margin-right: 5rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+}

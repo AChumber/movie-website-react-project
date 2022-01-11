@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useFetch } from '../../../../hooks/useFetch';
 import { addPopularMovie } from '../../../../redux/movies/popularMovieSlice';
 import { addTrendingMovies } from '../../../../redux/movies/trendingMoviesSlice';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
@@ -41,7 +40,7 @@ const FeaturedMovie = () => {
                         filter: 'blur(3px)' 
                     }}></div>
                     <div className="featured-movie-details">
-                        <img className="featured-movie-poster" src={'https://image.tmdb.org/t/p/w400'+popularMovie.poster_path} />
+                        <img className="featured-movie-poster" src={'https://image.tmdb.org/t/p/w400'+popularMovie.poster_path} alt={`${popularMovie.title} poster`} />
                         <div className="featured-movie-card">
                             <div className="featured-movie-text">
                                 <h1><b>{ popularMovie.title }</b></h1>

@@ -1,0 +1,23 @@
+.cast-card {
+    position: relative;
+    width: 60%;
+}
+.cast-card-profile-image {
+    width: 100%;
+    height: 100%;
+}
+.cast-card-overlay {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+.cast-card-actor-name {
+    background: rgba(41, 50, 65, 0.75);
+    width: 100%;
+    color: #EEE;
+    padding: 0.5rem 0 0 0.25rem;
+}
+.cast-card-character-name {
+    background: rgba(224, 224, 224, 0.75);
+    padding: 0 0 0.25rem 0.25rem;
+}

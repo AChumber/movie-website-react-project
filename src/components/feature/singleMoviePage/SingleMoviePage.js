@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import Spinner from '../../shared/loadingSpinner/Spinner';
-import CastCard from './castCard/CastCard';
+import CastGrid from './castGrid/CastGrid';
+import DetailsTable from './detailsTable/DetailsTable';
+import MovieAvailability from './movieAvailability/MovieAvailability';
+import RelatedMovies from './relatedMovies/RelatedMovies';
 import "./singleMoviesPage.css";
 
 const SingleMoviePage = () => {
+    const [director, setDirector] = useState('');
+    const [writers, setWriters] = useState('')
     let { movieId } = useParams();
     const { data:movieData, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`);
-    const { data:castData, isLoading:isCastDataLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}`)
 
     const formatRuntime = (runtime) => {
         //Format runtime to 'xxhrs xxmins'
@@ -25,6 +29,7 @@ const SingleMoviePage = () => {
             return 'percent-low';
         }
     }
+    
 
     return (
         <>
@@ -42,25 +47,26 @@ const SingleMoviePage = () => {
                                 <div className={`single-movie-details-percent ${getaverageRatingBackgroundColor(movieData.vote_average)}`}>
                                     <p>{movieData.vote_average}</p>
                                 </div>
-                                <div className='single-movie-genres'>
-                                    { movieData.genres.map(genre => <p>{ genre.name }</p>) }
+                                <div className={(movieData.genres.length <= 2 ? 'single-movie-genres-small' : 'single-movie-genres-large')+' single-movie-genres'}>
+                                    { movieData.genres.map((genre, i) => <p key={i}>{ genre.name }</p>) }
                                 </div>
                                 <div className='single-movie-overview'>
                                     <h2>Overview</h2>
                                     <p>{ movieData.overview !== null ? movieData.overview : 'No Overview available' }</p>
                                     { movieData.tagline && <p className='single-movie-overview-tagline'>{ movieData.tagline }</p>}
                                 </div>
-                                <div className='single-movie-cast'>
-                                    <h2>Cast</h2>
-                                    { console.log(castData.cast) }
-                                    { 
-                                        !isCastDataLoading ? (
-                                            <div className='cast-grid'>
-                                            </div>
-                                        ) : (
-                                            <Spinner />
-                                        ) 
-                                    }
+                                <div className='single-movie-director-writer'>
+                                    <div className='single-movie-director-container'>
+                                        <h3>Director</h3>
+                                        <p>{ director }</p>
+                                    </div>
+                                    <div className='single-movie-writer-container'>
+                                        <h3>Writers</h3>
+                                        <p>{ writers }</p>
+                                    </div>
+                                </div>
+                                <div className='single-movie-watch-providers'>
+                                    <MovieAvailability movieId={ movieId } />
                                 </div>
                             </div>
                         </section>
@@ -72,7 +78,23 @@ const SingleMoviePage = () => {
 
                 
             </div>
-            <h3>Related Movies</h3>
+            
+            <CastGrid movieId={ movieId } setDirector={ setDirector } setWriters={ setWriters } />
+
+            <div className='single-movie-container'>
+                <h2 className='extra-detail-title'>More Details</h2>
+                {
+                    !isLoading ? (
+                        <DetailsTable movieData={ movieData } />
+                    ) : (
+                        <Spinner />
+                    )
+                }
+
+            </div>
+
+            <RelatedMovies movieId={ movieId } />
+            
         </>
     )
 }
