@@ -27,7 +27,7 @@ const CastGrid = ({ movieId, setDirector, setWriters }) => {
             setDirector(stringBuilder(director));
             setWriters(stringBuilder(writer));
         }
-    }, [isLoading])
+    }, [isLoading, castData.crew, setDirector, setWriters])
 
     return (
         <div className='single-movie-container cast-grid-container'>

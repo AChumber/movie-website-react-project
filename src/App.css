@@ -5,3 +5,14 @@
 .App-header {
   min-height: 10vh;
 }
+
+/* Percent Background colour used in MovieCard and SingleMoviePage */
+.percent-high {
+  background: linear-gradient(90.8deg, #8BAF88 25.29%, rgba(103, 142, 99, 0) 124.4%);
+}
+.percent-medium {
+  background: linear-gradient(90.8deg, #AFAF88 25.29%, rgba(142, 138, 99, 0) 124.4%);
+}
+.percent-low {
+  background: linear-gradient(90.8deg, #AF8888 25.29%, rgba(142, 99, 99, 0) 124.4%);
+}

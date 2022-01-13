@@ -10,18 +10,22 @@
     margin: auto;
     display: flex;
     padding: 2rem 0;
+    gap: 0.5rem;
+}
+.single-movie-poster-container {
+    width: 35%;
+
 }
 .single-movie-poster {
-    width: 25%;
-    margin-right: 1rem;
+    width: 100%;
+    height: auto;
 }
 .single-movie-detail-container {
     color: #FFFFFF;
     position: relative;
-    width: 100%;
     height: fit-content;
 }
-.single-movie-detail-container > h1 {
+.movie-title {
     font-size: 3rem;
     font-weight: bold;
 }
@@ -30,7 +34,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 15%;
+    width: 20%;
 }
 .single-movie-details-percent {
     position: absolute;
@@ -73,7 +77,7 @@
     padding-right: 5rem;
 }
 .single-movie-overview p {
-    color: #eeeeee;
+    color: #fcfcfc;
 }
 .single-movie-overview-tagline {
     font-style: italic;
@@ -90,7 +94,7 @@
     width: 90%;
     margin: auto;
 }
-.single-movie-director-writer {
+.single-movie-director-writer-container {
     margin-top: 1.5rem;
 }
 .single-movie-writer-container {
@@ -100,15 +104,105 @@
     margin-top: 1.5rem;
 }
 
+/*Percent background colour in App.css*/
 
 
-/* Misc percent background colours */
-.percent-high {
-    background: linear-gradient(90.8deg, #8BAF88 25.29%, rgba(103, 142, 99, 0) 124.4%);
+@media only screen and (max-width: 1550px) {
+    .movie-details-container {
+        width: 85%;
+    }
+    .movie-title {
+        font-size: 2.75rem;
+    }
+    .single-movie-genres-large {
+        width: 45%;
+    }
+    .single-movie-genres-small {
+        width: 30%;
+    }
 }
-.percent-medium {
-    background: linear-gradient(90.8deg, #AFAF88 25.29%, rgba(142, 138, 99, 0) 124.4%);
+@media only screen and (max-width: 1200px) {
+    .movie-details-container {
+        width: 95%;
+    }
+    .movie-title {
+        font-size: 2.5rem;
+    }
+    .single-movie-details-extra-title-details {
+        width: 25%;
+    }
 }
-.percent-low {
-    background: linear-gradient(90.8deg, #AF8888 25.29%, rgba(142, 99, 99, 0) 124.4%);
+@media only screen and (max-width: 992px) {
+    .movie-details-container {
+        width: 99%;
+    }
+    .movie-title {
+        font-size: 2.375rem;
+    }
+    .single-movie-subtitle {
+        font-size: 1.35rem;
+    }
+    .single-movie-genres-large {
+        width: 50%;
+    }
+    .single-movie-genres-small {
+        width: 35%;
+    }
+    .single-movie-director-writer-container {
+        display: flex; 
+        flex-direction: row;
+        align-items: baseline;
+        margin-top: 1rem;
+    }
+    .single-movie-director-container {
+        margin-right: 3rem;
+    }
+    .single-movie-watch-providers {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 894px) {
+    .single-movie-details-extra-title-details {
+        width: 30%;
+    }
+    .single-movie-genres-large {
+        width: 55%;
+    }
+    .single-movie-genres-small {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .single-movie-details-extra-title-details {
+        width: 40%;
+    }
+    .movie-title {
+        font-size: 2rem;
+    }
+    .single-movie-subtitle {
+        font-size: 1.25;
+    }
+    .single-movie-genres-large {
+        width: 75%;
+    }
+    .single-movie-genres-small {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .single-movie-details-extra-title-details {
+        width: 45%;
+        font-size: 0.938rem;
+    }
+    .single-movie-genres {
+        font-size: 0.875;
+    }
+    .single-movie-genres-large {
+        width: 90%;
+    }
+    .single-movie-genres-small {
+        width: 50%;
+    }
 }

@@ -6,10 +6,10 @@ const MovieAvailability = ({ movieId }) => {
     const { data, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}/watch/providers?api_key=${process.env.REACT_APP_API_KEY}`);
     return (
         <>
-            <h3>Where to Watch</h3>
+            <h2 className='single-movie-subtitle'>Where to Watch</h2>
             <div className='movie-providers-list'>
                 {
-                    (!isLoading && data.results['GB']) ? (
+                    (!isLoading && data.results['GB']['flatrate'] ) ? (
                         data.results['GB']['flatrate'].map((provider, index) => (
                             <div className='movie-provider' key={index}>
                                 <img className='movie-provider-logo-img'

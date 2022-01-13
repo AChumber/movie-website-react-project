@@ -40,7 +40,9 @@ const FeaturedMovie = () => {
                         filter: 'blur(3px)' 
                     }}></div>
                     <div className="featured-movie-details">
-                        <img className="featured-movie-poster" src={'https://image.tmdb.org/t/p/w400'+popularMovie.poster_path} alt={`${popularMovie.title} poster`} />
+                        <div className='featured-movie-poster-container'>
+                            <img className="featured-movie-poster" src={'https://image.tmdb.org/t/p/w400'+popularMovie.poster_path} alt={`${popularMovie.title} poster`} />
+                        </div>
                         <div className="featured-movie-card">
                             <div className="featured-movie-text">
                                 <h1><b>{ popularMovie.title }</b></h1>

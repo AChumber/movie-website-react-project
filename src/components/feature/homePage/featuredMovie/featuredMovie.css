@@ -18,19 +18,23 @@
     transform: translate(-50%, -50%);
     z-index: 10;
     display: flex;
-    width: 60%;
-    max-height: 90%;
+    width: 70%;
+    max-height: 95%
+}
+.featured-movie-poster-container {
+    width: 100%;
 }
 .featured-movie-poster {
     object-fit: contain;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
 }
 .featured-movie-card {
     background-color: rgba(41, 50, 65, 0.4);
-    margin-left: 1.275rem;
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .featured-movie-text {
     padding: 2rem;
@@ -38,12 +42,16 @@
 .featured-movie-text h1 {
     margin-bottom: 0.5rem;
 }
+.featured-movie-text p {
+    color: #d3d3d3;
+}
 .featured-movie-btns {
-    padding: 2rem;
+    margin-left: 1rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 55%;
+    width: 65%;
 }
 .featured-movie-btns a {
     text-decoration: none;
@@ -66,4 +74,62 @@
 .featured-info:hover {
     color: #E0FBFC;
     text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1550px) {
+    .featured-movie-btns {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .featured-movie-btns {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .featured-movie-details {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 894px) {
+    .featured-movie-details {
+        width: 90%;
+    } 
+    .featured-movie-btns {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .featured-movie-details {
+        width: 90%;
+        top: 25%;
+        transform: translate(-50%, -25%);
+    }
+    .featured-movie-card {
+        margin-left: 0;
+    }
+    .featured-movie-btns .featured-info {
+        display: none;
+    }
+    .featured-movie-btns .featured-cta {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .featured-movie-details {
+        width: 98%;
+    }
+    .featured-movie-text > h1 {
+        font-size: 1.5rem;
+        text-decoration: underline;
+    }
+    .featured-movie-text > p {
+        font-size: 1rem;
+    }
+    .featured-movie-btns {
+        margin-left: 0;
+    }
 }

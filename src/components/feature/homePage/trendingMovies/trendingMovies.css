@@ -11,7 +11,7 @@
     margin-top: 2rem;
     width: 10px;
     height: 100%;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: absolute;
     left: 3rem;
     top: 0;
@@ -28,7 +28,7 @@
 .title-text {
     color: white;
     font-size: 1.725rem;
-    padding: 0.5rem 0.25rem 0 0.1rem;
+    padding: 0rem 0.25rem 0 0.1rem;
 }
 .title-text:hover ~ .title-extra-text {
     opacity: 1;
@@ -68,4 +68,29 @@
 }
 .horizontal-movies-list::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    .movie-list-section {
+        padding-left: 3.25rem;
+    }
+    .movie-list-section-decor {
+        left: 2rem;
+    }
+    .title {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 894px) {
+
+}
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 576px) {
+
 }

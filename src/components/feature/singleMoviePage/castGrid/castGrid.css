@@ -5,3 +5,27 @@
     margin: 1rem 2rem;
     width: 100%;
 }
+
+
+@media only screen and (max-width: 1200px) {
+    .cast-grid {
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+@media only screen and (max-width: 992px) {
+    .cast-grid {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cast-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .cast-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}

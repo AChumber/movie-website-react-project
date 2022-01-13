@@ -11,3 +11,26 @@
 .table-data-name {
     font-weight: bold;
 }
+.single-movie-details-table a {
+    color: rgb(238, 238, 238);
+}
+.single-movie-details-table a:hover {
+    color: rgb(225, 245, 255);
+}
+
+@media only screen and (max-width: 1550px) {
+    .single-movie-details-table {
+        width: 75%;
+    }
+    
+}
+@media only screen and (max-width: 1200px) {
+    .single-movie-details-table {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 992px){
+    .single-movie-details-table {
+        width: 95%;
+    }
+}

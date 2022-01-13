@@ -1,6 +1,6 @@
 .cast-card {
     position: relative;
-    width: 60%;
+    width: 70%;
 }
 .cast-card-profile-image {
     width: 100%;
@@ -20,4 +20,16 @@
 .cast-card-character-name {
     background: rgba(224, 224, 224, 0.75);
     padding: 0 0 0.25rem 0.25rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .cast-card {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .cast-card {
+        width: 85%;
+    }
 }
