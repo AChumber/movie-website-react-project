@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
 import logo from './movies-logo.svg';
+import Search from './search/Search';
 
 const Nav = () => {
-    const [navSearch, setNavSearch] = useState('');
+    const [isToggleSearch, setIsToggleSearch] = useState(false);
     const [isToggleLinks, setIsToggleLinks] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -21,6 +22,7 @@ const Nav = () => {
         }
     })
 
+
     return (
         <header>
             <nav className="nav">
@@ -35,14 +37,18 @@ const Nav = () => {
                         <a className="nav-link" href="#trending">Trending</a>
                         <a className="nav-link" href="#releases">New Releases</a>
                         <a className="nav-link" href="#my">My Movies</a>
-                        <input 
-                            type="text"
-                            placeholder="Enter Movie Name..." 
-                            value={ navSearch } 
-                            onChange={ (e) => setNavSearch(e.target.value) } />
+                        {/* Toggle Search component when pressed */}
+                        <div className='nav-link nav-search-icon' onClick={ () => setIsToggleSearch(isSearch => !isSearch) }>
+                            <i className="bi bi-search"></i>
+                        </div>
                     </div> 
                 )}
             </nav>
+            {
+                isToggleSearch && (
+                    <Search toggleModal={ setIsToggleSearch } />
+                )
+            }
         </header>
     )
 }

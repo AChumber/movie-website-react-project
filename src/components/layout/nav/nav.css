@@ -35,6 +35,13 @@
     padding: 0.75rem 0.5rem;
     width: 35%;
 }
+.nav-search-icon {
+    cursor: pointer;
+    transform: scale(1.6);
+}
+.nav-search-icon i {
+    transform: scale(2);
+}
 
 .nav-toggle-menu-btn {
     display: none;
@@ -57,6 +64,13 @@
     }
     .nav-links {
         flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 10.5vh;
+        transform: translate(0, 0.5vh);
+        z-index: 5;
+        background-color: #1e2530;
+        height: 90vh;
     }
     .nav-link {
         width: 100%;
@@ -85,10 +99,11 @@
     #line1.toggle {
         transform: rotate(-45deg) translate(-5px, 4.5px);
     }
-    #line2.toggle{
+    #line2.toggle {
         opacity: 0;
     }
-    #line3.toggle{
+    #line3.toggle {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+    
 }

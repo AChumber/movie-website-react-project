@@ -1,0 +1,44 @@
+.search-modal {
+    position: absolute;
+    left: 50%;
+    top: 10vh;
+    z-index: 5;
+    transform: translate(-50%, 0);
+    width: 75%;
+    min-height: 20vh;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+.search-input-container {
+    display: flex;
+}
+.search-modal-close-btn {
+    color: black;
+    background-color: rgb(228, 228, 228);
+    width: fit-content;
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.25rem 0.75rem;
+}
+.search-modal-close-btn:hover {
+    background-color: rgb(214, 214, 214);
+}
+.search-modal-close-btn i {
+    font-size: 2rem;
+}
+.search-input {
+    width: 90%;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--main-bg-color);
+}
+
+.search-modal-results {
+    margin-top: 1rem;
+}
+.search-modal-results-grid {
+    display: grid;
+    row-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 32%));
+}

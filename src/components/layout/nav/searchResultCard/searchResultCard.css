@@ -1,0 +1,19 @@
+.search-result-card {
+    width: 90%;
+    display: flex;
+    background-color: rgb(247, 247, 247);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in;
+}
+.search-result-card:hover {
+    background-color: rgb(230, 230, 230);
+    border-radius: 4px;
+}
+.search-result-card-img {
+    width: 30%;
+}
+.search-result-card-title {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
