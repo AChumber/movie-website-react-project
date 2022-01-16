@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
 import logo from './movies-logo.svg';
 import Search from './search/Search';
+import { CSSTransition } from 'react-transition-group';
 
 const Nav = () => {
     const [isToggleSearch, setIsToggleSearch] = useState(false);
     const [isToggleLinks, setIsToggleLinks] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const searchRef = useRef(null);  //reference search container div to use in CSSTransition via noderef. Otherwise error occurs
 
     useEffect(() => {
         //https://dev.to/ziratsu/code-a-responsive-navbar-with-react-45le - responsive navbar
         const changeScreenWidth = () => {
             setScreenWidth(window.innerWidth);
         }
-
         window.addEventListener('resize', changeScreenWidth);
-
         return () => {
             window.removeEventListener('resize', changeScreenWidth);
         }
@@ -44,11 +44,15 @@ const Nav = () => {
                     </div> 
                 )}
             </nav>
-            {
-                isToggleSearch && (
-                    <Search toggleModal={ setIsToggleSearch } />
-                )
-            }
+            <CSSTransition in={isToggleSearch} nodeRef={searchRef} unmountOnExit timeout={500} classNames="search-transition">
+                {
+                    isToggleSearch ?(
+                        <div className='search-container' ref={searchRef}>
+                            <Search toggleModal={ setIsToggleSearch } />
+                        </div>
+                    ) : <></>
+                }
+            </CSSTransition>
         </header>
     )
 }

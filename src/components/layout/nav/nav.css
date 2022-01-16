@@ -55,6 +55,26 @@
     transition: all 0.3s ease-out;
 }
 
+/* Transition for Search when entering and exiting DOM - via React Transition Group */
+.search-transition-enter {
+    opacity: 0;
+    transform: translateY(-150px);
+}
+.search-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 250ms, transform 500ms;
+}
+.search-transition-exit {
+    opacity: 1;
+}
+.search-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 250ms, transform 500ms;
+}
+
+
 @media screen and (max-width: 920px) { 
     header {
         position: relative;
