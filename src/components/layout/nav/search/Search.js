@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { debounce } from 'lodash';
 import './search.css';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 import SearchResultCard from '../searchResultCard/SearchResultCard';
 
 const Search = ({ toggleModal }) => {
+    const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSearchLoading, setIsSearchLoading] = useState(false);
+    const navigate = useNavigate();
 
     const fetchSearchResults = debounce(async (searchTerm) => {
+        setSearchTerm(searchTerm);
         if(searchTerm !== ''){
             setIsSearchLoading(true);
             console.log(searchTerm);
@@ -32,6 +36,12 @@ const Search = ({ toggleModal }) => {
 
     const toggleSearchModal = () => toggleModal(prevState => !prevState)
 
+    const onExploreBtnClick = (e) => {
+        e.preventDefault();
+        navigate(`/list/search?query=${searchTerm}`);
+        toggleModal();
+    }
+
     return (
         <div className='search-modal'>
             <div className='search-input-container'>
@@ -52,13 +62,22 @@ const Search = ({ toggleModal }) => {
                 <div className='search-modal-results-grid'>
                     {
                         (!isSearchLoading) ?
-                            (searchResults !== [] ? 
-                                ( searchResults.map(result => <SearchResultCard toggleSearchModal={ toggleSearchModal } result={ result } key={ result.id }/>) ) :
-                                (<p>No Results could be found</p>)
+                            (searchResults.length !== 0 ? 
+                                (
+                                    searchResults.map(result => (
+                                        <SearchResultCard toggleSearchModal={ toggleSearchModal } result={ result } key={ result.id }/>)
+                                    )
+                                ) :
+                                (<p></p>)
                             ) :
                             ( <Spinner /> )
                     }
                 </div>
+                {
+                    (!isSearchLoading && searchResults.length !== 0) && (
+                        <button onClick={ onExploreBtnClick }>Explore More</button>
+                    )
+                }
             </div>
         </div>
     )

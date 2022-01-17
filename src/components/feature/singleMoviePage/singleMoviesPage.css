@@ -7,7 +7,8 @@
 .movie-details-container {
     background: linear-gradient(281.07deg, rgba(41, 50, 65, 0.5) 72.09%, rgba(41, 50, 65, 0) 87.77%);
     width: 75%;
-    margin: auto;
+    min-height: 90%;
+    margin: 1.5rem auto;
     display: flex;
     padding: 2rem 0;
     gap: 0.5rem;

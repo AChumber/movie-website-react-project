@@ -1,6 +1,6 @@
 import React from 'react';
 import './movieCard.css';
-import { getaverageRatingBackgroundColor } from '../functions/getAverageRatingBackgroundColor';
+import { getaverageRatingBackgroundColor } from '../../../helpers/getAverageRatingBackgroundColor';
 import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {

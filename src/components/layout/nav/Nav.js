@@ -35,7 +35,7 @@ const Nav = () => {
                 {(isToggleLinks || screenWidth > 920) && (
                     <div className="nav-links">
                         <a className="nav-link" href="#trending">Trending</a>
-                        <a className="nav-link" href="#releases">New Releases</a>
+                        <Link to="/list/new%20releases" className="nav-link" href="#releases">New Releases</Link>
                         <a className="nav-link" href="#my">My Movies</a>
                         {/* Toggle Search component when pressed */}
                         <div className='nav-link nav-search-icon' onClick={ () => setIsToggleSearch(isSearch => !isSearch) }>

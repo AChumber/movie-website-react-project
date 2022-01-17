@@ -6,7 +6,7 @@ import CastGrid from './castGrid/CastGrid';
 import DetailsTable from './detailsTable/DetailsTable';
 import MovieAvailability from './movieAvailability/MovieAvailability';
 import RelatedMovies from './relatedMovies/RelatedMovies';
-import { getaverageRatingBackgroundColor } from '../../shared/functions/getAverageRatingBackgroundColor';
+import { getaverageRatingBackgroundColor } from '../../../helpers/getAverageRatingBackgroundColor';
 import "./singleMoviesPage.css";
 
 const SingleMoviePage = () => {

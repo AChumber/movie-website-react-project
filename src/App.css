@@ -5,6 +5,16 @@
 .App-header {
   min-height: 10vh;
 }
+.container {
+  width: 90%;
+  margin: auto;
+  margin: 0 6rem;
+  min-height: 80vh;
+}
+.container-title {
+  margin-top: 1rem;
+  color: #FFF;
+}
 
 /* Percent Background colour used in MovieCard and SingleMoviePage */
 .percent-high {
