@@ -16,6 +16,19 @@
   color: #FFF;
 }
 
+.primary-btn {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  transition: background-color 0.15s ease-in, color 0.1s ease-in-out;
+}
+.primary-btn:hover {
+  background-color: var(--main-bg-color);
+  color: aliceblue;
+}
 /* Percent Background colour used in MovieCard and SingleMoviePage */
 .percent-high {
   background: linear-gradient(90.8deg, #8BAF88 25.29%, rgba(103, 142, 99, 0) 124.4%);

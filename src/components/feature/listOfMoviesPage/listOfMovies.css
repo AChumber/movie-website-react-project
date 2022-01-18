@@ -1,0 +1,13 @@
+.more-results-btn {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    transition: background-color 0.15s ease-in, color 0.1s ease-in-out;
+}
+.more-results-btn:hover {
+    background-color: var(--main-bg-color);
+    color: aliceblue;
+}

@@ -24,13 +24,15 @@ const Search = ({ toggleModal }) => {
                     return res.json()
                 })
                 .then(resData =>{
-                        setSearchResults(resData.results.slice(0, 15));
+                        setSearchResults(resData.results.slice(0, 9));
                         setIsSearchLoading(false);
                 })
                 .catch(err => {
                     console.log(err)
                     setIsSearchLoading(false);
                 });
+        } else {
+            setSearchResults([]);
         }
     }, 500);
 
@@ -50,6 +52,7 @@ const Search = ({ toggleModal }) => {
                     <p><small>Close Search</small></p>
                 </div>
                 <input 
+                    autoFocus
                     className='search-input'
                     type="text"
                     placeholder="Search..." 
@@ -75,7 +78,7 @@ const Search = ({ toggleModal }) => {
                 </div>
                 {
                     (!isSearchLoading && searchResults.length !== 0) && (
-                        <button onClick={ onExploreBtnClick }>Explore More</button>
+                        <button className='primary-btn' onClick={ onExploreBtnClick }>Explore More</button>
                     )
                 }
             </div>

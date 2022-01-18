@@ -6,7 +6,11 @@ const ResultGrid = ({ data }) => {
     return (
         <div className='results-grid-container'>
             {
-                data.map(movie => <MovieCard key={ movie.id } movie={ movie } />)
+                data.map(movie => (
+                    <div className='results-grid-result-container'>
+                        <MovieCard key={ movie.id } movie={ movie } />
+                    </div>
+                ))
             }
         </div>
     )
