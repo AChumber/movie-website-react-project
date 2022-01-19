@@ -29,6 +29,27 @@
   background-color: var(--main-bg-color);
   color: aliceblue;
 }
+
+/* Toast Styles */
+.toast {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  padding: 1.25rem 2rem;
+  box-shadow: 2px 1px 4px #888888;
+  border: 1px solid #fff;
+  font-size: 1.25rem;
+}
+.toast-icon-span i {
+  transform: scale(1.5);
+}
+.positive-toast {
+  background-color: var(--main-bg-color);
+  color: #FFF;
+}
+
 /* Percent Background colour used in MovieCard and SingleMoviePage */
 .percent-high {
   background: linear-gradient(90.8deg, #8BAF88 25.29%, rgba(103, 142, 99, 0) 124.4%);

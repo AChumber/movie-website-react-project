@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import Spinner from '../../shared/loadingSpinner/Spinner';
 import './listOfMovies.css';
-import ResultGrid from './resultGrid/ResultGrid';
+import MoviesGrid from '../../shared/moviesGrid/MoviesGrid';
 
 const ListOfMovies = () => {
     const [results, setResults] = useState([]);
@@ -51,6 +51,8 @@ const ListOfMovies = () => {
 
     const onMoreBtnClick = () => setPage(page+1);
 
+    
+
     return (
         <div className='container'>
             {/* Show title if not from search term */}
@@ -63,7 +65,7 @@ const ListOfMovies = () => {
                 !isLoading ? (
                     <>
                         {console.log(results)}
-                        <ResultGrid data={ results } />
+                        <MoviesGrid data={ results } />
                         <button className='primary-btn' onClick={ onMoreBtnClick }>More Results</button>
                     </>
                 ) :

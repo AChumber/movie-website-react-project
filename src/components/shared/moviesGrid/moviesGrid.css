@@ -1,0 +1,59 @@
+.results-grid-container {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 0.75rem;
+}
+.results-grid-result-container {
+    width: fit-content;
+}
+
+/* React Transition Group style names */
+.result-transition-enter {
+    opacity: 0;
+    transform: translate(-10px, 0);
+}
+.result-transition-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 0.4s ease-in-out;
+}
+.result-transition-exit {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+.result-transition-exit-active {
+    opacity: 0;
+    transform: translate(10px, 0);
+    transition: all 0.4s ease-in-out;
+}
+
+
+@media only screen and (max-width: 1550px) {
+    .results-grid-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .results-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0.5em;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .results-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 0.25rem;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    .results-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 650px) {
+    .results-grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

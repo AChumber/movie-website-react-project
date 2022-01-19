@@ -36,7 +36,7 @@ const Nav = () => {
                     <div className="nav-links">
                         <a className="nav-link" href="#trending">Trending</a>
                         <Link to="/list/new%20releases" className="nav-link" href="#releases">New Releases</Link>
-                        <a className="nav-link" href="#my">My Movies</a>
+                        <Link to="/list/my-movies" className="nav-link">My Movies</Link>
                         {/* Toggle Search component when pressed */}
                         <div className='nav-link nav-search-icon' onClick={ () => setIsToggleSearch(isSearch => !isSearch) }>
                             <i className="bi bi-search"></i>
