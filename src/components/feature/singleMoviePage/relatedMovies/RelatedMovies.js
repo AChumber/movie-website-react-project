@@ -10,7 +10,11 @@ const RelatedMovies = ({ movieId }) => {
                 <h2 className='extra-detail-title'>Related Movies</h2>
                 <div className='horizontal-movies-list'>
                     { !isRelatedMoviesLoading && (
-                        relatedMovies.results.slice(0, 10).map((movie, i) => <MovieCard key={i} movie={ movie } />)
+                        relatedMovies.results.slice(0, 10).map((movie, i) => (
+                            <div className='horizontal-movies-list-movie-container' key={movie.id}>
+                                <MovieCard movie={ movie } />
+                            </div>
+                        ))
                     ) }
                 </div>
             </div>

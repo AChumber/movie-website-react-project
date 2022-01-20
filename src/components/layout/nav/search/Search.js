@@ -4,6 +4,7 @@ import { debounce } from 'lodash';
 import './search.css';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 import SearchResultCard from '../searchResultCard/SearchResultCard';
+import SearchByGenre from './searchByGenre/SearchByGenre';
 
 const Search = ({ toggleModal }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -44,6 +45,11 @@ const Search = ({ toggleModal }) => {
         toggleModal();
     }
 
+    const onGenreTabClick = (genre) => {
+        navigate(`/list/genre?genre_id=${genre.id}&genre=${genre.name}`);
+        toggleModal();
+    }
+
     return (
         <div className='search-modal'>
             <div className='search-input-container'>
@@ -59,6 +65,8 @@ const Search = ({ toggleModal }) => {
                     onChange={ (e) => fetchSearchResults(e.target.value) } >
                 </input>
             </div>
+
+            <SearchByGenre onGenreTabClick={ onGenreTabClick } />
 
             <div className='search-modal-results'>
                 <h2>Results</h2>

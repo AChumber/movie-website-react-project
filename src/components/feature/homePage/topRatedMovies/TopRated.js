@@ -20,7 +20,11 @@ const NewReleases = () => {
             {
                 !isLoading ? (
                     <div className='horizontal-movies-list'>
-                        {topRatedMovies.results.slice(0, 10).map(movie => <MovieCard key={ movie.id } movie={ movie } />)}
+                        {topRatedMovies.results.slice(0, 10).map(movie => (
+                            <div className='horizontal-movies-list-movie-container'>
+                                <MovieCard key={ movie.id } movie={ movie } />
+                            </div>
+                        ))}
                     </div>
                 ) : (
                     <Spinner />

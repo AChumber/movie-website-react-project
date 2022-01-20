@@ -1,8 +1,10 @@
 .movie-card-container {
     position: relative;
-    margin-right: 10px;
     margin-bottom: 0.15rem;
     cursor: pointer;
+    width: 15rem;
+    height: 100%;
+    background-color: #333;
 }
 .movie-card-container:hover .movie-card-overlay{
     opacity: 1;
@@ -31,7 +33,8 @@
     align-items: center;
 }
 .movie-card-img {
-    height: 300px;
+    height: 100%;
+    width: 100%;
 }
 .movie-card-title {
     font-weight: bold;

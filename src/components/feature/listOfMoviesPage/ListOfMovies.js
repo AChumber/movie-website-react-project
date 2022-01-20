@@ -12,6 +12,8 @@ const ListOfMovies = () => {
     const navigate = useNavigate();
     const params = useParams();
     const query = searchParams.get('query');
+    const genreId = searchParams.get('genre_id');
+    const genreName = searchParams.get('genre');
 
     const upperCaseWords = (string) => {
         const capitalise = (word) => word.charAt(0).toUpperCase() + word.slice(1);
@@ -23,7 +25,8 @@ const ListOfMovies = () => {
             trending: `${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
             "new releases": `${process.env.REACT_APP_API_BASE_URL}/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-GB&page=${page}`,
             search: `${process.env.REACT_APP_API_BASE_URL}/search/movie?query=${query}&api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
-            "top rated": `${process.env.REACT_APP_API_BASE_URL}/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+            "top rated": `${process.env.REACT_APP_API_BASE_URL}/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
+            genre: `${process.env.REACT_APP_API_BASE_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genreId}&page=${page}&sort_by=popularity.desc&include_adult=false`
         }
 
         if(urls[params.type] === undefined) {
@@ -51,16 +54,18 @@ const ListOfMovies = () => {
 
     const onMoreBtnClick = () => setPage(page+1);
 
-    
+    const getPageTitle = () => {
+        //function to get the title based on url
+        if(params.type !== 'search'){
+            return upperCaseWords(params.type !== 'genre' ? params.type : `${params.type} - ${genreName}` );
+        }
+        return `Search for "${query}"`;
+    }
 
     return (
         <div className='container'>
             {/* Show title if not from search term */}
-            <h1 className='container-title'>{ 
-                params.type !== "search" ?
-                    upperCaseWords(params.type) :
-                    `Search for "${query}"`
-            }</h1>
+            <h1 className='container-title'>{ getPageTitle() }</h1>
             {
                 !isLoading ? (
                     <>

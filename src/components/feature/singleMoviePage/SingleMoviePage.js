@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import Spinner from '../../shared/loadingSpinner/Spinner';
 import CastGrid from './castGrid/CastGrid';
@@ -13,6 +13,7 @@ const SingleMoviePage = () => {
     const [director, setDirector] = useState('');
     const [writers, setWriters] = useState('')
     let { movieId } = useParams();
+    const navigate = useNavigate();
     const { data:movieData, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`);
 
     const formatRuntime = (runtime) => {
@@ -41,7 +42,10 @@ const SingleMoviePage = () => {
                                     <p>{movieData.vote_average}</p>
                                 </div>
                                 <div className={(movieData.genres.length <= 2 ? 'single-movie-genres-small' : 'single-movie-genres-large')+' single-movie-genres'}>
-                                    { movieData.genres.map((genre, i) => <p key={i}>{ genre.name }</p>) }
+                                    { movieData.genres.map((genre) => (<p key={genre.id} 
+                                                                            onClick={() => navigate(`/list/genre?genre_id=${genre.id}&genre=${genre.name}`)}>
+                                                                                { genre.name }
+                                                                        </p>)) }
                                 </div>
                                 <div className='single-movie-overview'>
                                     <h2 className='single-movie-subtitle'>Overview</h2>

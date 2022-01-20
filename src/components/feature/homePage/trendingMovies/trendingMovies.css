@@ -48,13 +48,18 @@
     height: 0.725rem;
 }
 .horizontal-movies-list {
-    width: 99%;
+    width: 100%;
     margin-left: 1rem;
     overflow-x: scroll;
     overflow-y: hidden;
     display: flex;
     flex-direction: row;
-    padding: 1rem 0 0 1rem;
+    padding: 0.5rem 0 0 0.5rem;
+    column-gap: 0.5rem;
+    height: 40vh;
+}
+.horizontal-movies-list-movie-container {
+    width: 15rem;
 }
 .horizontal-movies-list::-webkit-scrollbar {
     width: 5px;
