@@ -12,12 +12,12 @@
 /* React Transition Group style names */
 .result-transition-enter {
     opacity: 0;
-    transform: translate(-10px, 0);
+    transform: translate(0, -5px);
 }
 .result-transition-enter-active {
     opacity: 1;
     transform: translate(0, 0);
-    transition: all 0.4s ease-in-out;
+    transition: all 1.2s ease-in-out;
 }
 .result-transition-exit {
     opacity: 1;
@@ -25,8 +25,8 @@
 }
 .result-transition-exit-active {
     opacity: 0;
-    transform: translate(10px, 0);
-    transition: all 0.4s ease-in-out;
+    transform: translate(0, 5px);
+    transition: all 1.2s ease-in-out;
 }
 
 

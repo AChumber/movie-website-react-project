@@ -1,17 +1,22 @@
 import React from 'react';
 import MovieCard from '../movieCard/MovieCard';
 import './moviesGrid.css';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const ResultGrid = ({ data, isAddToMyMovies = true }) => {
     return (
         <div className='results-grid-container'>
+            <TransitionGroup component={null}>
             {
                 data.map(movie => (
-                    <div className='results-grid-result-container'>
-                        <MovieCard key={ movie.id } movie={ movie } isAddToMyMovies={ isAddToMyMovies } />
-                    </div>
+                    <CSSTransition key={ movie.id } timeout={10000} classNames='result-transition'>
+                        <div className='results-grid-result-container'>
+                            <MovieCard movie={ movie } isAddToMyMovies={ isAddToMyMovies } />
+                        </div>
+                    </CSSTransition>
                 ))
             }
+            </TransitionGroup>
         </div>
     )
 }

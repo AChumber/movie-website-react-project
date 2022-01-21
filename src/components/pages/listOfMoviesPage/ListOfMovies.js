@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import Spinner from '../../shared/loadingSpinner/Spinner';
 import './listOfMovies.css';
@@ -20,19 +20,35 @@ const ListOfMovies = () => {
         return string.split(' ').map(word => capitalise(word)).join(' ');
     }
 
+    const urls = useMemo(() => ({
+        trending: `${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
+        "new releases": `${process.env.REACT_APP_API_BASE_URL}/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-GB&page=${page}`,
+        search: `${process.env.REACT_APP_API_BASE_URL}/search/movie?query=${query}&api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
+        "top rated": `${process.env.REACT_APP_API_BASE_URL}/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
+        genre: `${process.env.REACT_APP_API_BASE_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genreId}&page=${page}&sort_by=popularity.desc&include_adult=false`
+    }), [genreId, page, query]);
+
+    const fetchFreshData = useCallback(async () => {
+        await fetch(urls[params.type])
+                .then(res => {
+                    if(!res.ok) {
+                        throw new Error("Error Fetching Data. Response not OK");
+                    }
+                    return res.json()
+                })
+                .then(resData =>{
+                        setResults(resData.results)
+                        setIsLoading(false);
+                })
+                .catch(err => {
+                    console.log(err)
+                    setIsLoading(false);
+                });
+    }, [params.type, urls]);
+
+    //run only when page state increases to add data to end of results state and not override
     useEffect(() => {
-        const urls = {
-            trending: `${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
-            "new releases": `${process.env.REACT_APP_API_BASE_URL}/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-GB&page=${page}`,
-            search: `${process.env.REACT_APP_API_BASE_URL}/search/movie?query=${query}&api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
-            "top rated": `${process.env.REACT_APP_API_BASE_URL}/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,
-            genre: `${process.env.REACT_APP_API_BASE_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genreId}&page=${page}&sort_by=popularity.desc&include_adult=false`
-        }
-
-        if(urls[params.type] === undefined) {
-            navigate("*");
-        }
-
+        console.log(page + " - increased. "+urls[params.type]);
         (async() => {
             await fetch(urls[params.type])
                 .then(res => {
@@ -50,7 +66,17 @@ const ListOfMovies = () => {
                     setIsLoading(false);
                 });
         })()
-    }, [page, params.type, navigate, query])
+    }, [page])
+
+    //only run when a new list is being shown (remove state and start fresh)
+    useEffect(() => {
+        if(urls[params.type] === undefined) {
+            navigate("*");
+        }
+        console.log('need fresh data');
+        fetchFreshData();
+
+    }, [params.type, navigate, query, genreId])
 
     const onMoreBtnClick = () => setPage(page+1);
 
@@ -69,7 +95,6 @@ const ListOfMovies = () => {
             {
                 !isLoading ? (
                     <>
-                        {console.log(results)}
                         <MoviesGrid data={ results } />
                         <button className='primary-btn' onClick={ onMoreBtnClick }>More Results</button>
                     </>
