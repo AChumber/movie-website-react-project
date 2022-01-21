@@ -94,10 +94,10 @@ const ListOfMovies = () => {
             <h1 className='container-title'>{ getPageTitle() }</h1>
             {
                 !isLoading ? (
-                    <>
+                    <div className='list-of-movies-grid-container'>
                         <MoviesGrid data={ results } />
-                        <button className='primary-btn' onClick={ onMoreBtnClick }>More Results</button>
-                    </>
+                        <button className='primary-btn more-results-btn' onClick={ onMoreBtnClick }>More Results</button>
+                    </div>
                 ) :
                 <Spinner />
             }

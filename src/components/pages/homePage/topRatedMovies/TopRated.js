@@ -6,7 +6,7 @@ import useFetch from '../../../../hooks/useFetch';
 import MovieCard from '../../../shared/movieCard/MovieCard';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 
-const NewReleases = () => {
+const TopRated = () => {
     const navigate = useNavigate();
     const { data:topRatedMovies, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&page=1`)
 
@@ -21,8 +21,8 @@ const NewReleases = () => {
                 !isLoading ? (
                     <div className='horizontal-movies-list'>
                         {topRatedMovies.results.slice(0, 10).map(movie => (
-                            <div className='horizontal-movies-list-movie-container'>
-                                <MovieCard key={ movie.id } movie={ movie } />
+                            <div className='horizontal-movies-list-movie-container' key={ movie.id }>
+                                <MovieCard movie={ movie } />
                             </div>
                         ))}
                     </div>
@@ -34,4 +34,4 @@ const NewReleases = () => {
     )
 }
 
-export default NewReleases
+export default TopRated;

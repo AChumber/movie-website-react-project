@@ -1,15 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import popularMovieReducer from './redux/movies/popularMovieSlice';
 import trendingMoviesSlice from './redux/movies/trendingMoviesSlice';
-import topRatedMoviesSlice from './redux/movies/topRatedMoviesSlice';
 import myMoviesReducer from './redux/movies/myMoviesSlice';
+import genresSlice from './redux/movies/genresSlice';
 
 const store = configureStore({
     reducer: {
+        genres: genresSlice,
         myMovies: myMoviesReducer,
-        popularMovie: popularMovieReducer,
         trendingMovies: trendingMoviesSlice,
-        topRatedMovies: topRatedMoviesSlice
     }
 });
 

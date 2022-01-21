@@ -1,37 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addPopularMovie } from '../../../../redux/movies/popularMovieSlice';
-import { addTrendingMovies } from '../../../../redux/movies/trendingMoviesSlice';
+import { fetchTrendingList } from '../../../../redux/movies/trendingMoviesSlice';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 import './featuredMovie.css';
 
 const FeaturedMovie = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const popularMovie = useSelector((state) => state.popularMovie.movie);
+    const { trendingList, popularMovie, isLoading } = useSelector(state => state.trendingMovies);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchPopularMovie = async () => {
-        //Fetch data from endpoint and dispatch action addPopularMovie with payload of movie object
-        await fetch(`${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`)
-            .then(data => data.json())
-            .then(res => {
-                const movieIndex = Math.floor(Math.random() * res.results.length);
-                dispatch(addPopularMovie(res.results[movieIndex]));
-                dispatch(addTrendingMovies(res.results));
-                setIsLoading(false);
-            })
-            .catch(e => console.log("Error Fetching Results - "+e));
+        if(trendingList.length === 0) {
+            dispatch(fetchTrendingList());
         }
-
-        fetchPopularMovie();
     }, [dispatch])
 
     return (
         <div className="featured-movie">
             {
-                !isLoading ? (
+                (!isLoading && popularMovie.title) ? (
                 <>
                     <div className="featured-movie-bg-img" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${popularMovie.backdrop_path})`,
                         backgroundPosition: 'center',

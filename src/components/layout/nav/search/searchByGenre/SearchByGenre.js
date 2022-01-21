@@ -1,8 +1,22 @@
-import useFetch from '../../../../../hooks/useFetch';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'; 
+import { fetchGenresList } from '../../../../../redux/movies/genresSlice'; //dispatch this
+import GenreTab from '../../../../shared/genreTab/GenreTab';
 import './searchByGenre.css';
 
-const SearchByGenre = ({ onGenreTabClick }) => {
-    const { data, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`)
+
+const SearchByGenre = () => {
+    const { genresList, isLoading } = useSelector(store => store.genres);
+    const dispatch = useDispatch();
+
+    //useEffect to prevent more than one dispatch of fetching data
+    useEffect(() => {
+        //check redux state is genres list exist(length > 0) else dispatch async thunk 
+        if(genresList.length === 0) {
+            dispatch(fetchGenresList());
+        }
+    }, []);
+    
 
     return (
         <div className='search-modal-genres'>
@@ -10,10 +24,8 @@ const SearchByGenre = ({ onGenreTabClick }) => {
             <div className='search-modal-genres-container'>
                 {
                     !isLoading && (
-                        data.genres.slice(0,6).map(genre => (
-                            <div className='search-genre-tab' onClick={ () => onGenreTabClick(genre) } key={ genre.id }>
-                                <p>{ genre.name }</p>
-                            </div>
+                        genresList.slice(0,6).map(genre => (
+                            <GenreTab genre={ genre } key={genre.id} />
                         ))
                     )
                 }

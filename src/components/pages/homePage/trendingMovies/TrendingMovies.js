@@ -2,15 +2,15 @@
 //Get list from movieDB API and store in redux slice as may use in other components down the tree (like recommendations)
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './trendingMovies.css';
-import useFetch from '../../../../hooks/useFetch';
 import MovieCard from '../../../shared/movieCard/MovieCard';
 import chevron from '../chevron.svg';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 
 const TrendingMovies = () => {
+    const { trendingList, isLoading } = useSelector(state => state.trendingMovies);
     const navigate = useNavigate();
-    const { data:trendingMovies, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`);
 
     return (
         <section className='trending-movies-section movie-list-section' id='#trending'>
@@ -22,7 +22,7 @@ const TrendingMovies = () => {
             {
                 !isLoading ? (
                     <div className='horizontal-movies-list'>
-                        {trendingMovies.results.slice(0, 10).map(movie => (
+                        {trendingList.slice(0, 10).map(movie => (
                             <div className='horizontal-movies-list-movie-container' key={ movie.id }>
                                 <MovieCard movie={ movie } />
                             </div>

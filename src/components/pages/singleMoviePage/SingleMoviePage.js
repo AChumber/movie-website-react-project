@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import Spinner from '../../shared/loadingSpinner/Spinner';
@@ -15,6 +15,11 @@ const SingleMoviePage = () => {
     let { movieId } = useParams();
     const navigate = useNavigate();
     const { data:movieData, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`);
+
+    //Scroll to top of page when component renders
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [movieId])
 
     const formatRuntime = (runtime) => {
         //Format runtime to 'xxhrs xxmins'

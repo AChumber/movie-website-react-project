@@ -63,7 +63,7 @@
     height: 20%;
     padding: 0.75rem;
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(25px);
     cursor: pointer;
     background-color: var(--main-bg-color);
     color: #FFF;

@@ -1,13 +1,7 @@
-.more-results-btn {
-    padding: 1rem 2rem;
-    font-size: 1.25rem;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    transition: background-color 0.15s ease-in, color 0.1s ease-in-out;
+.list-of-movies-grid-container {
+    background-color: #343C4A;
+    padding: 1rem;
 }
-.more-results-btn:hover {
-    background-color: var(--main-bg-color);
-    color: aliceblue;
+.more-results-btn {
+    margin-top: 4rem;
 }

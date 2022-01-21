@@ -45,11 +45,6 @@ const Search = ({ toggleModal }) => {
         toggleModal();
     }
 
-    const onGenreTabClick = (genre) => {
-        navigate(`/list/genre?genre_id=${genre.id}&genre=${genre.name}`);
-        toggleModal();
-    }
-
     return (
         <div className='search-modal'>
             <div className='search-input-container'>
@@ -66,7 +61,7 @@ const Search = ({ toggleModal }) => {
                 </input>
             </div>
 
-            <SearchByGenre onGenreTabClick={ onGenreTabClick } />
+            <SearchByGenre />
 
             <div className='search-modal-results'>
                 <h2>Results</h2>

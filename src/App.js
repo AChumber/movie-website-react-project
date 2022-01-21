@@ -3,13 +3,13 @@ import Nav from './components/layout/nav/Nav';
 import store from './store';
 import { Provider } from 'react-redux';
 import Footer from './components/layout/footer/Footer';
-import HomePage from './components/feature/homePage/HomePage';
+import HomePage from './components/pages/homePage/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SingleMoviePage from './components/feature/singleMoviePage/SingleMoviePage';
-import ListOfMovies from './components/feature/listOfMoviesPage/ListOfMovies';
-import NotFound from './components/feature/notFoundPage/NotFound';
-import MyMovies from './components/feature/myMoviesPage/MyMovies';
-import ListOfMoviesNoParams from './components/feature/listOfMoviesPage/ListOfMoviesNoParams';
+import SingleMoviePage from './components/pages/singleMoviePage/SingleMoviePage';
+import ListOfMovies from './components/pages/listOfMoviesPage/ListOfMovies';
+import NotFound from './components/pages/notFoundPage/NotFound';
+import MyMovies from './components/pages/myMoviesPage/MyMovies';
+import ListOfMoviesNoParams from './components/pages/listOfMoviesPage/listOfMoviesNoParams/ListOfMoviesNoParams';
 
 function App() {
   return (

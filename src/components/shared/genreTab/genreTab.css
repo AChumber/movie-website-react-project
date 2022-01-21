@@ -1,0 +1,12 @@
+.search-genre-tab {
+    background-color: #293241;
+    color: #fff;
+    padding: 0.55rem 1.4rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+.search-genre-tab:hover {
+    background-color: #556583;
+    border-radius: 14px;
+}
