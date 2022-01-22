@@ -41,8 +41,12 @@ const MovieCard = ({ movie, isAddToMyMovies = true }) => {
     const navigate = useNavigate();
     return (
         <div className='movie-card-container'>
-            <img className='movie-card-img' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={`${ movie.title } poster`} loading='lazy' />
-            <div className='movie-card-overlay' onClick={ () => navigate(`/movie/${movie.id}`) }>
+            <div className='movie-card-navigator' onClick={ () => navigate(`/movie/${movie.id}`) }></div>
+            <img className='movie-card-img' 
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
+                alt={`${ movie.title } poster`} 
+                loading='lazy' />
+            <div className='movie-card-overlay'>
                 <p className='movie-card-title'>{ movie.title }</p>
                 <p className={`movie-card-rating ${getaverageRatingBackgroundColor(movie.vote_average)}`}>{ movie.vote_average }</p>
             </div>

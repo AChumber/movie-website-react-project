@@ -47,35 +47,7 @@
 .title-chevron {
     height: 0.725rem;
 }
-.horizontal-movies-list {
-    width: 100%;
-    margin-left: 1rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem 0 0 0.5rem;
-    column-gap: 0.5rem;
-    height: 40vh;
-}
-.horizontal-movies-list-movie-container {
-    width: 15rem;
-    margin-bottom: 0.25rem;
-}
-.horizontal-movies-list::-webkit-scrollbar {
-    width: 5px;
-    height: 10px;
-    border-radius: 12px;
-}
-.horizontal-movies-list::-webkit-scrollbar-track {
-    background: rgba(13, 16, 20, 0.9);
-}
-.horizontal-movies-list::-webkit-scrollbar-thumb {
-    background: #888;
-}
-.horizontal-movies-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+
 
 
 
@@ -89,15 +61,4 @@
     .title {
         margin-bottom: 0;
     }
-}
-
-@media only screen and (max-width: 894px) {
-
-}
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 576px) {
-
 }

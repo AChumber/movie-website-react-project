@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import chevron from '../chevron.svg';
 import './topRated.css';
 import useFetch from '../../../../hooks/useFetch';
-import MovieCard from '../../../shared/movieCard/MovieCard';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
+import HorizontalMoviesList from '../../../shared/horizontalMoviesList/HorizontalMoviesList';
 
 const TopRated = () => {
     const navigate = useNavigate();
@@ -19,13 +19,7 @@ const TopRated = () => {
             </div>
             {
                 !isLoading ? (
-                    <div className='horizontal-movies-list'>
-                        {topRatedMovies.results.slice(0, 10).map(movie => (
-                            <div className='horizontal-movies-list-movie-container' key={ movie.id }>
-                                <MovieCard movie={ movie } />
-                            </div>
-                        ))}
-                    </div>
+                    <HorizontalMoviesList list={ topRatedMovies.results.slice(0, 10) } />
                 ) : (
                     <Spinner />
                 )

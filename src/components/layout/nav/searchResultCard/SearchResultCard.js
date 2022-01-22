@@ -12,7 +12,6 @@ const SearchResultCard = ({ toggleSearchModal, result }) => {
 
     return (
         <div className='search-result-card' onClick={ onCardClick }>
-            {console.log(result)}
             {
                 result.poster_path !== null ?
                     <img className='search-result-card-img' 

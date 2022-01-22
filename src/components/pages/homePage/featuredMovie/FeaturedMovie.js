@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchTrendingList } from '../../../../redux/movies/trendingMoviesSlice';
+import { fetchTrendingList, refreshPopularMovie } from '../../../../redux/movies/trendingMoviesSlice';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 import './featuredMovie.css';
 
@@ -13,6 +13,7 @@ const FeaturedMovie = () => {
         if(trendingList.length === 0) {
             dispatch(fetchTrendingList());
         }
+        dispatch(refreshPopularMovie());
     }, [dispatch])
 
     return (

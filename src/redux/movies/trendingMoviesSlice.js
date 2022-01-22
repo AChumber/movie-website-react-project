@@ -19,6 +19,9 @@ export const trendingMoviesSlice = createSlice({
         isLoading: null
     },
     reducers: {
+        refreshPopularMovie: (state, action) => {
+            state.popularMovie = state.trendingList[Math.ceil(Math.random() * state.trendingList.length)];
+        }
     },
     extraReducers: {
         [fetchTrendingList.pending]: (state, action) => {
@@ -35,5 +38,5 @@ export const trendingMoviesSlice = createSlice({
     }
 });
 
-export const { getPopularMovie } = trendingMoviesSlice.actions;
+export const { refreshPopularMovie } = trendingMoviesSlice.actions;
 export default trendingMoviesSlice.reducer;

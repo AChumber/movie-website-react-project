@@ -4,9 +4,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './trendingMovies.css';
-import MovieCard from '../../../shared/movieCard/MovieCard';
 import chevron from '../chevron.svg';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
+import HorizontalMoviesList from '../../../shared/horizontalMoviesList/HorizontalMoviesList';
 
 const TrendingMovies = () => {
     const { trendingList, isLoading } = useSelector(state => state.trendingMovies);
@@ -21,13 +21,7 @@ const TrendingMovies = () => {
             </div>
             {
                 !isLoading ? (
-                    <div className='horizontal-movies-list'>
-                        {trendingList.slice(0, 10).map(movie => (
-                            <div className='horizontal-movies-list-movie-container' key={ movie.id }>
-                                <MovieCard movie={ movie } />
-                            </div>
-                        ))}
-                    </div>
+                    <HorizontalMoviesList list={ trendingList.slice(0, 10) } />
                 ) : (
                     <Spinner />
                 )

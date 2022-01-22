@@ -1,0 +1,18 @@
+.list-of-movies-no-params .sub-title {
+    margin-top: 1rem;
+}
+.list-of-movies-no-params-btn {
+    margin: 1rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: color 0.1s ease-in, 
+        background 0.15s ease-in-out, 
+        outline 0.2s ease-out;
+}
+.list-of-movies-no-params-btn:hover {
+    color: #FFF;
+    background: linear-gradient(166.78deg, #293241 9.51%, rgba(79, 68, 42, 0.653125) 63.35%, rgba(150, 101, 0, 0) 308.26%);
+    outline: 1px solid rgb(226, 226, 226);
+}

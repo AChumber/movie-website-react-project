@@ -10,7 +10,7 @@ const MyMovies = () => {
             <h1 className='container-title'>My Movies</h1>
                 {
                     myMovies.length === 0 ?
-                        <p>No Movies in list. Find your favourite movies to add them!</p> :
+                        <p style={{color:'#fff'}}>No Movies in your list. Find your favourite movies to add them!</p> :
                         (
                             //Add ResultsGrid wrapped in CSSTransition to animate exit of movie card
                             <MoviesGrid data={ myMovies } isAddToMyMovies={ false } />

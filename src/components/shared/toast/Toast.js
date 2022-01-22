@@ -22,7 +22,7 @@ const Toast = ({ children }) => {
 export const PositiveFeedbackToast = ({ children }) => {
     return(
         <Toast>
-            <div className="toast positive-toast">
+            <div className="toast">
                 <p><span className='toast-icon-span'><i className="bi bi-check"></i></span>{children}</p>
             </div>
         </Toast>

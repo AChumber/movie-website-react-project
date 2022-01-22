@@ -9,7 +9,7 @@ const ResultGrid = ({ data, isAddToMyMovies = true }) => {
             <TransitionGroup component={null}>
             {
                 data.map(movie => (
-                    <CSSTransition key={ movie.id } timeout={10000} classNames='result-transition'>
+                    <CSSTransition key={ movie.id } timeout={300} classNames='result-transition'>
                         <div className='results-grid-result-container'>
                             <MovieCard movie={ movie } isAddToMyMovies={ isAddToMyMovies } />
                         </div>

@@ -4,7 +4,14 @@
     cursor: pointer;
     width: 15rem;
     height: 100%;
-    background-color: #333;
+}
+.movie-card-navigator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 5;
 }
 .movie-card-container:hover .movie-card-overlay{
     opacity: 1;
@@ -80,4 +87,50 @@
 .movie-card-container:hover .movie-card-add-btn {
     transform: translateY(0);
     opacity: 0.9;
+}
+
+/* Styles for Tablet size or smaller - no overlay hover state */
+@media only screen and (max-width: 870px) {
+    .movie-card-container {
+        background-color: rgba(250,250,250, 1);
+        border-radius: 6px;
+        padding: 1rem
+    }
+    .movie-card-navigator {
+        height: 90%;
+    }
+    .movie-card-overlay {
+        opacity: 1;
+        position: static;
+        height: auto;
+        background-color: rgba(0,0,0,0);
+    }
+    .movie-card-img {
+        height: auto;
+    }
+    .movie-card-title {
+        transform: translateY(0);
+        opacity: 1;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    } 
+    .movie-card-rating {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        font-size: 1.1rem;
+        width: 25%;
+        border-bottom-right-radius: 20px;
+        padding: 0.9rem;
+        transition: none;
+    }
+    .movie-card-add-btn {
+        opacity: 1;
+        transform: translateY(0);
+        height: 4vh;
+        border-radius: 0 0 5px 5px;
+        display: block;
+        margin: auto;
+        background-color: #171b24;
+    }
 }
