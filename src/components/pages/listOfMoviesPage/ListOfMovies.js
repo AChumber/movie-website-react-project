@@ -15,10 +15,10 @@ const ListOfMovies = () => {
     const genreId = searchParams.get('genre_id');
     const genreName = searchParams.get('genre');
 
-    const upperCaseWords = (string) => {
+    const upperCaseWords = useCallback((string) => {
         const capitalise = (word) => word.charAt(0).toUpperCase() + word.slice(1);
         return string.split(' ').map(word => capitalise(word)).join(' ');
-    }
+    }, []);
 
     const urls = useMemo(() => ({
         trending: `${process.env.REACT_APP_API_BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`,

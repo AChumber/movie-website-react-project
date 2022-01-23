@@ -16,7 +16,6 @@ const Search = ({ toggleModal }) => {
         setSearchTerm(searchTerm);
         if(searchTerm !== ''){
             setIsSearchLoading(true);
-            console.log(searchTerm);
             await fetch(`${process.env.REACT_APP_API_BASE_URL}/search/movie?query=${searchTerm}&api_key=${process.env.REACT_APP_API_KEY}`)
                 .then(res => {
                     if(!res.ok) {

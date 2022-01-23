@@ -35,7 +35,9 @@ const CastGrid = ({ movieId, setDirector, setWriters }) => {
             { 
                 !isLoading ? (
                     <div className='cast-grid'>
-                        {castData.cast.slice(0, 12).map((castMember, i) => <CastCard key={ i } castMember={ castMember } />)}
+                        {castData.cast.slice(0, 12).map((castMember) => {
+                            return <CastCard key={ castMember.id } castMember={ castMember } />
+                        })}
                     </div>
                 ) : (
                     <Spinner />

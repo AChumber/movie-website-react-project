@@ -12,7 +12,7 @@ const GenresSection = () => {
         if(genresList.length === 0){
             dispatch(fetchGenresList());
         }
-    }, [])
+    }, [dispatch, genresList.length])
 
     return(
         <section className='genres-section'>

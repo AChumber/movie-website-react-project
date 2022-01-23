@@ -15,7 +15,7 @@ const SearchByGenre = () => {
         if(genresList.length === 0) {
             dispatch(fetchGenresList());
         }
-    }, []);
+    }, [dispatch, genresList.length]);
     
 
     return (

@@ -17,7 +17,7 @@ const ListOfMoviesNoParams = () => {
         if(trendingList.length === 0) {
             dispatch(fetchTrendingList());
         }
-    }, [dispatch])
+    }, [dispatch, trendingList.length])
 
     return( 
         <div className='container list-of-movies-no-params'>

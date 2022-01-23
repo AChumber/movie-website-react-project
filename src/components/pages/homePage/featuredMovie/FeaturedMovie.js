@@ -14,7 +14,7 @@ const FeaturedMovie = () => {
             dispatch(fetchTrendingList());
         }
         dispatch(refreshPopularMovie());
-    }, [dispatch])
+    }, [dispatch, trendingList.length])
 
     return (
         <div className="featured-movie">

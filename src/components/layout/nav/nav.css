@@ -84,13 +84,15 @@
     }
     .nav-links {
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         left: 0;
-        top: 10.5vh;
+        top: 9.5vh;
         transform: translate(0, 0.5vh);
-        z-index: 5;
+        z-index: 10;
         background-color: #1e2530;
         height: 90vh;
+        width: 40%;
+        justify-content: flex-start;
     }
     .nav-link {
         width: 100%;
@@ -98,6 +100,7 @@
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
         padding: 0.5rem 0;
+        margin-bottom: 1rem;
     }
     .nav-link:hover {
         background-color: #1e2530;
@@ -106,7 +109,9 @@
         margin: 0.5rem 0;
         width: 80%;
     }
-
+    .nav-search-icon {
+        transform: scale(1);
+    }
     /*Menu button - rotate lines to show a cross*/
     .nav-toggle-menu-btn {
         display: block;
@@ -117,13 +122,13 @@
     }
 
     #line1.toggle {
-        transform: rotate(-45deg) translate(-5px, 4.5px);
+        transform: rotate(-45deg) translate(-7px, 4.5px);
     }
     #line2.toggle {
         opacity: 0;
     }
     #line3.toggle {
-        transform: rotate(45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-7.5px, -6px);
     }
     
 }
