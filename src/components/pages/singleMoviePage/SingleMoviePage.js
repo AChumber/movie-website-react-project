@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addMovie } from '../../../redux/movies/myMoviesSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import Spinner from '../../shared/loadingSpinner/Spinner';
@@ -11,11 +13,14 @@ import "./singleMoviesPage.css";
 import SkeletonSingleMovie from '../../../skeletons/skeletonSingleMovie/SkeletonSingleMovie';
 
 const SingleMoviePage = () => {
-    const [director, setDirector] = useState('');
-    const [writers, setWriters] = useState('')
     let { movieId } = useParams();
     const navigate = useNavigate();
+    
+    const [director, setDirector] = useState('');
+    const [writers, setWriters] = useState('');
     const { data:movieData, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`);
+    
+    const dispatch = useDispatch();
 
     //Scroll to top of page when component renders
     useEffect(() => {
@@ -53,6 +58,7 @@ const SingleMoviePage = () => {
                                                                                 { genre.name }
                                                                         </p>)) }
                                 </div>
+                                <button onClick={ () => dispatch(addMovie(movieData)) } className='single-movie-add-to-my-movies-btn'>Add to my List</button>
                                 <div className='single-movie-overview'>
                                     <h2 className='single-movie-subtitle'>Overview</h2>
                                     <p>{ movieData.overview !== null ? movieData.overview : 'No Overview available' }</p>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { debounce } from 'lodash';
 import './search.css';
-import Spinner from '../../../shared/loadingSpinner/Spinner';
 import SearchResultCard from '../searchResultCard/SearchResultCard';
 import SearchByGenre from './searchByGenre/SearchByGenre';
 import SkeletonSearchResults from '../../../../skeletons/skeletonSearchResults/SkeletonSearchResults';

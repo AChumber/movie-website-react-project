@@ -38,7 +38,6 @@ const FeaturedMovie = () => {
                             </div>
                             <div className="featured-movie-btns">
                                 <Link to={`/movie/${popularMovie.id}`} className="featured-cta">Explore Movie</Link>
-                                <a href="#" className="featured-info">Find where to watch</a>
                             </div>
                         </div>
                     </div>

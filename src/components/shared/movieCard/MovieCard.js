@@ -16,7 +16,7 @@ const MovieCard = ({ movie, isAddToMyMovies = true }) => {
         if(isShowToast) {
             timer = setTimeout(() => {
                 setIsShowToast(false);
-            }, 10000);
+            }, 3000);
         }
 
         //cleanup remove timer is not null

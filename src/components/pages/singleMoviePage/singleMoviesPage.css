@@ -12,6 +12,7 @@
     display: flex;
     padding: 2rem 0;
     gap: 0.5rem;
+    position: relative;
 }
 .single-movie-poster-container {
     width: 45%;
@@ -104,7 +105,21 @@
 .single-movie-watch-providers {
     margin-top: 1.5rem;
 }
-
+.single-movie-add-to-my-movies-btn {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    background-color: #919191;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.1s ease-in;
+}
+.single-movie-add-to-my-movies-btn:hover {
+    background-color: #727272;
+    outline: 1px solid rgb(167, 167, 167);
+}
 /*Percent background colour in App.css*/
 
 
