@@ -5,6 +5,7 @@ import './search.css';
 import Spinner from '../../../shared/loadingSpinner/Spinner';
 import SearchResultCard from '../searchResultCard/SearchResultCard';
 import SearchByGenre from './searchByGenre/SearchByGenre';
+import SkeletonSearchResults from '../../../../skeletons/skeletonSearchResults/SkeletonSearchResults';
 
 const Search = ({ toggleModal }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -75,7 +76,7 @@ const Search = ({ toggleModal }) => {
                                 ) :
                                 (<p></p>)
                             ) :
-                            ( <Spinner /> )
+                            ( <SkeletonSearchResults /> )
                     }
                 </div>
                 {

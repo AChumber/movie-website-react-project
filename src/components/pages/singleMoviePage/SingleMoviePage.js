@@ -8,6 +8,7 @@ import MovieAvailability from './movieAvailability/MovieAvailability';
 import RelatedMovies from './relatedMovies/RelatedMovies';
 import { getaverageRatingBackgroundColor } from '../../../helpers/getAverageRatingBackgroundColor';
 import "./singleMoviesPage.css";
+import SkeletonSingleMovie from '../../../skeletons/skeletonSingleMovie/SkeletonSingleMovie';
 
 const SingleMoviePage = () => {
     const [director, setDirector] = useState('');
@@ -74,11 +75,9 @@ const SingleMoviePage = () => {
                         </section>
                     ) :
                     (
-                        <Spinner />
+                        <SkeletonSingleMovie />
                     )
                 }
-
-                
             </div>
             
             <CastGrid movieId={ movieId } setDirector={ setDirector } setWriters={ setWriters } />

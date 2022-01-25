@@ -5,6 +5,7 @@ import { fetchTrendingList } from '../../../../redux/movies/trendingMoviesSlice'
 import HorizontalMoviesList from '../../../shared/horizontalMoviesList/HorizontalMoviesList';
 import { useNavigate } from 'react-router-dom';
 import './listOfMoviesNoParams.css';
+import SkeletonHorizontalList from '../../../../skeletons/skeletonHorizontalList/SkeletonHorizontalList';
 
 //Component when user navigates to '/list' will offer navigation to list of trending, new releases etc...
 const ListOfMoviesNoParams = () => {
@@ -37,12 +38,14 @@ const ListOfMoviesNoParams = () => {
             <section className='list-of-movies-no-params-trending-section'>
                 <h2 className='sub-title'>Trending</h2>
                 {
-                    !isLoading && (
+                    !isLoading ? (
                         <>
                             <HorizontalMoviesList list={ trendingList.slice(0, 15) } />
                             <button className='list-of-movies-no-params-btn'
                                 onClick={ () => navigate(`/list/trending`) }>Explore more Trending Movies</button>
                         </>
+                    ) : (
+                        <SkeletonHorizontalList />
                     )
                 }
             </section>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
-import Spinner from '../../shared/loadingSpinner/Spinner';
 import './listOfMovies.css';
 import MoviesGrid from '../../shared/moviesGrid/MoviesGrid';
+import SkeletonMovieGrid from '../../../skeletons/skeletonMovieGrid/SkeletonMovieGrid';
 
 const ListOfMovies = () => {
     const [results, setResults] = useState([]);
@@ -48,7 +48,6 @@ const ListOfMovies = () => {
 
     //run only when page state increases to add data to end of results state and not override
     useEffect(() => {
-        console.log(page + " - increased. "+urls[params.type]);
         (async() => {
             await fetch(urls[params.type])
                 .then(res => {
@@ -73,7 +72,6 @@ const ListOfMovies = () => {
         if(urls[params.type] === undefined) {
             navigate("*");
         }
-        console.log('need fresh data');
         fetchFreshData();
 
     }, [params.type, navigate, query, genreId])
@@ -99,7 +97,7 @@ const ListOfMovies = () => {
                         <button className='primary-btn more-results-btn' onClick={ onMoreBtnClick }>More Results</button>
                     </div>
                 ) :
-                <Spinner />
+                <SkeletonMovieGrid />
             }
         </div>
     )

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import CastCard from './castCard/CastCard';
-import Spinner from '../../../shared/loadingSpinner/Spinner';
 import useFetch from '../../../../hooks/useFetch';
 import './castGrid.css';
+import SkeletonCastGrid from '../../../../skeletons/skeletonCastGrid/SkeletonCastGrid';
+
 const CastGrid = ({ movieId, setDirector, setWriters }) => {
     const { data:castData, isLoading } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}`);
 
@@ -32,17 +33,17 @@ const CastGrid = ({ movieId, setDirector, setWriters }) => {
     return (
         <div className='single-movie-container cast-grid-container'>
             <h2 className='extra-detail-title'>Cast</h2>
-            { 
-                !isLoading ? (
-                    <div className='cast-grid'>
-                        {castData.cast.slice(0, 12).map((castMember) => {
+                <div className='cast-grid'>
+                { 
+                    !isLoading ? (
+                        castData.cast.slice(0, 12).map((castMember) => {
                             return <CastCard key={ castMember.id } castMember={ castMember } />
-                        })}
-                    </div>
-                ) : (
-                    <Spinner />
-                ) 
-            }
+                        })
+                        ) : (
+                            <SkeletonCastGrid />
+                        ) 
+                }
+                </div>
         </div>
     )
 }

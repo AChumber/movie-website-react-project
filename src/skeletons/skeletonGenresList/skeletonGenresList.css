@@ -1,0 +1,25 @@
+.skeleton-tab-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}
+
+@media screen and (max-width: 1180px) { 
+    .search-genre-tab {
+        flex-basis: 33%;
+        margin-bottom: 0.35rem;
+    }
+    .search-genre-tab:nth-child(3n) {
+        flex-basis: 33%;
+    }
+}
+@media screen and (max-width: 760px) { 
+    .search-genre-tab {
+        flex-basis: 50%;
+    }
+    .search-genre-tab:nth-child(3n) {
+        flex-basis: 50%;
+    }
+}

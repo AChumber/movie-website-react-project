@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './trendingMovies.css';
 import chevron from '../chevron.svg';
-import Spinner from '../../../shared/loadingSpinner/Spinner';
 import HorizontalMoviesList from '../../../shared/horizontalMoviesList/HorizontalMoviesList';
+import SkeletonHorizontalList from '../../../../skeletons/skeletonHorizontalList/SkeletonHorizontalList';
 
 const TrendingMovies = () => {
     const { trendingList, isLoading } = useSelector(state => state.trendingMovies);
@@ -23,7 +23,7 @@ const TrendingMovies = () => {
                 !isLoading ? (
                     <HorizontalMoviesList list={ trendingList.slice(0, 10) } />
                 ) : (
-                    <Spinner />
+                    <SkeletonHorizontalList />
                 )
             }
         </section>

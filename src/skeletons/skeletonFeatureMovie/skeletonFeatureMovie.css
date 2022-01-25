@@ -1,0 +1,25 @@
+.skeleton-featured-movie-container {
+    background-color: #212630;
+    width: 100%;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+.skeleton-featured-movie-details {
+    width: 40%;
+    margin-left: 1rem;
+    background-color: #2a313d;
+    padding: 1rem;
+    height: 95.5%;
+}
+
+@media only screen and (max-width: 992px) {
+    .skeleton-featured-movie-container {
+        padding: 1rem 0;
+    }
+    .skeleton-featured-movie-details {
+        width: 75%;
+    }
+}

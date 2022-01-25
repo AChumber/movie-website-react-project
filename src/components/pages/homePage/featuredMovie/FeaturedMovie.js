@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTrendingList, refreshPopularMovie } from '../../../../redux/movies/trendingMoviesSlice';
-import Spinner from '../../../shared/loadingSpinner/Spinner';
+import SkeletonFeatureMovie from '../../../../skeletons/skeletonFeatureMovie/SkeletonFeatureMovie';
 import './featuredMovie.css';
 
 const FeaturedMovie = () => {
@@ -19,7 +19,7 @@ const FeaturedMovie = () => {
     return (
         <div className="featured-movie">
             {
-                (!isLoading && popularMovie.title) ? (
+                (!isLoading && popularMovie.hasOwnProperty('title')) ? (
                 <>
                     <div className="featured-movie-bg-img" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${popularMovie.backdrop_path})`,
                         backgroundPosition: 'center',
@@ -44,7 +44,7 @@ const FeaturedMovie = () => {
                     </div>
                 </>
                 ) : (
-                    <Spinner />
+                    <SkeletonFeatureMovie />
                 )
             }
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchGenresList } from '../../../../../redux/movies/genresSlice';
+import SkeletonGenresGrid from '../../../../../skeletons/skeletonGenresGrid/SkeletonGenresGrid';
 import GenreTab from '../../../../shared/genreTab/GenreTab';
 import './genresSection.css';
 
@@ -19,8 +20,10 @@ const GenresSection = () => {
             <h2 className='sub-title'>Genres</h2>
             <div className='genres-grid'>
                 {
-                    !isLoading && (
+                    !isLoading ? (
                         genresList.map(genre => <GenreTab genre={ genre } key={ genre.id }/>)
+                    ) : (
+                        <SkeletonGenresGrid />
                     )
                 }
             </div>

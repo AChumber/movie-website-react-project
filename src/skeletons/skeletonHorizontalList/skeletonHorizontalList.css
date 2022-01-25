@@ -1,0 +1,8 @@
+.skeleton-card-list-container {
+    display: flex;
+    overflow-x: hidden;
+    margin-bottom: 0.5rem;
+}
+.skeleton-card-list-container div {
+    margin-right: 0.5rem;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { fetchGenresList } from '../../../../../redux/movies/genresSlice'; //dispatch this
+import SkeletonGenresList from '../../../../../skeletons/skeletonGenresList/SkeletonGenresList';
 import GenreTab from '../../../../shared/genreTab/GenreTab';
 import './searchByGenre.css';
 
@@ -23,10 +24,12 @@ const SearchByGenre = () => {
             <h2>Search By Genre</h2>
             <div className='search-modal-genres-container'>
                 {
-                    !isLoading && (
+                    !isLoading ? (
                         genresList.slice(0,6).map(genre => (
                             <GenreTab genre={ genre } key={genre.id} />
                         ))
+                    ) : (
+                        <SkeletonGenresList />
                     )
                 }
             </div>

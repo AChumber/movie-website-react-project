@@ -1,0 +1,128 @@
+.not-found { 
+    width: 60%;
+    margin-left: 6rem;
+    min-height: 70vh;
+}
+.not-found-text-container {
+    position: relative;
+    top: 100px;
+}
+.not-found h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFF;
+}
+.not-found h2 > span {
+    font-size: 1.2rem;
+    color: #C4C4C4;
+}
+.not-found h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFF;
+    width: 75%;
+    margin-top: 0.5rem;
+}
+.not-found-decor-line {
+    height: 2px;
+    width: 28%;
+    background: linear-gradient(to right, #E0FBFC 0%, rgba(224, 251, 252, 0) 100%);
+}
+
+.not-found-links {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+.not-found-links a {
+    color: #C4C4C4;
+}
+.not-found-links a:hover {
+    color: #E0FBFC;
+}
+.not-found-links-divider {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #E0FBFC;
+    border-radius: 50%;
+}
+
+.not-found-graphic {
+    position: absolute;
+    width: 37%;
+    bottom: 0;
+    right: 0;
+    height: 60%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .not-found {
+        width: 70%;
+    }
+    .not-found h1 {
+        width: 80%;
+    }
+    .not-found-graphic {
+        width: 45%;
+        height: 50%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .not-found {
+        width: 90%;
+    }
+    .not-found h1 {
+        width: 90%;
+    }
+    .not-found-graphic {
+        width: 50%;
+        bottom: 55px;
+    }
+}
+@media only screen and (max-width: 894px) {
+    .not-found {
+        margin-left: 3rem;
+    }
+    .not-found-links {
+        width: 90%;
+    }
+    .not-found-graphic {
+        width: 55%;
+    }
+}
+@media only screen and (max-width: 761px) {
+    .not-found-text-container {
+        top: 50px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .not-found {
+        margin-left: 2rem;
+    }
+    .not-found-links {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 528px) {
+    .not-found {
+        margin-left: 2rem;
+    }
+    .not-found-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .not-found-links a { 
+        margin-bottom: 0.5rem;
+    }
+    .not-found-links-divider {
+        display: none;
+    }
+    .not-found-graphic {
+        height: 50%;
+        width: 60%;
+    }
+}
