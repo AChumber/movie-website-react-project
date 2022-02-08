@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/movie-website-react-project/static/css/main.db2ed24b.chunk.css",
-    "main.js": "/movie-website-react-project/static/js/main.0f9ddb49.chunk.js",
-    "main.js.map": "/movie-website-react-project/static/js/main.0f9ddb49.chunk.js.map",
+    "main.js": "/movie-website-react-project/static/js/main.aae58c7c.chunk.js",
+    "main.js.map": "/movie-website-react-project/static/js/main.aae58c7c.chunk.js.map",
     "runtime-main.js": "/movie-website-react-project/static/js/runtime-main.87133e8b.js",
     "runtime-main.js.map": "/movie-website-react-project/static/js/runtime-main.87133e8b.js.map",
     "static/css/2.a4cc8fde.chunk.css": "/movie-website-react-project/static/css/2.a4cc8fde.chunk.css",
-    "static/js/2.042f9e0f.chunk.js": "/movie-website-react-project/static/js/2.042f9e0f.chunk.js",
-    "static/js/2.042f9e0f.chunk.js.map": "/movie-website-react-project/static/js/2.042f9e0f.chunk.js.map",
+    "static/js/2.d6affdfe.chunk.js": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js",
+    "static/js/2.d6affdfe.chunk.js.map": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js.map",
     "index.html": "/movie-website-react-project/index.html",
     "static/css/2.a4cc8fde.chunk.css.map": "/movie-website-react-project/static/css/2.a4cc8fde.chunk.css.map",
     "static/css/main.db2ed24b.chunk.css.map": "/movie-website-react-project/static/css/main.db2ed24b.chunk.css.map",
-    "static/js/2.042f9e0f.chunk.js.LICENSE.txt": "/movie-website-react-project/static/js/2.042f9e0f.chunk.js.LICENSE.txt",
+    "static/js/2.d6affdfe.chunk.js.LICENSE.txt": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/movie-website-react-project/static/media/bootstrap-icons.38c4d249.woff",
     "static/media/chevron.e21eb26e.svg": "/movie-website-react-project/static/media/chevron.e21eb26e.svg",
     "static/media/movies-logo.7792ac02.svg": "/movie-website-react-project/static/media/movies-logo.7792ac02.svg",
@@ -20,8 +20,8 @@
   "entrypoints": [
     "static/js/runtime-main.87133e8b.js",
     "static/css/2.a4cc8fde.chunk.css",
-    "static/js/2.042f9e0f.chunk.js",
+    "static/js/2.d6affdfe.chunk.js",
     "static/css/main.db2ed24b.chunk.css",
-    "static/js/main.0f9ddb49.chunk.js"
+    "static/js/main.aae58c7c.chunk.js"
   ]
 }
