@@ -4,7 +4,7 @@ import store from './store';
 import { Provider } from 'react-redux';
 import Footer from './components/layout/footer/Footer';
 import HomePage from './components/pages/homePage/HomePage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import SingleMoviePage from './components/pages/singleMoviePage/SingleMoviePage';
 import ListOfMovies from './components/pages/listOfMoviesPage/ListOfMovies';
 import NotFound from './components/pages/notFoundPage/NotFound';
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Provider store={ store }>
 
-          <BrowserRouter>
+          <HashRouter>
             <Nav />
 
                 <Routes>
@@ -33,7 +33,7 @@ function App() {
                 </Routes>
 
               <Footer />
-          </BrowserRouter>
+          </HashRouter>
 
       </Provider>
     </div>

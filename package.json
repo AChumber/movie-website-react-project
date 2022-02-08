@@ -2,7 +2,7 @@
   "name": "movie-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AChumber.github.io/movie-website-react-project",
+  "homepage": "https://achumber.github.io/movie-website-react-project/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
