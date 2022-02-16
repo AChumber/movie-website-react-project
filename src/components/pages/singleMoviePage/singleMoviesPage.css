@@ -78,12 +78,13 @@
     margin-top: 1rem;
     padding-right: 5rem;
 }
-.single-movie-overview p {
+.single-movie-overview p:first-child {
     color: #fcfcfc;
 }
 .single-movie-overview-tagline {
     font-style: italic;
     margin-top: 0.5rem;
+    color: #dddddd;
 }
 
 .extra-detail-title {
@@ -208,6 +209,15 @@
 }
 
 @media only screen and (max-width: 576px) {
+    .movie-details-container {
+        flex-direction: column;
+        padding: 1rem 0 1rem 0.25rem;
+        border-bottom: 1px solid #2A3442;
+    }
+    .single-movie-poster-container {
+        width: 90%;
+        margin: auto;
+    }
     .single-movie-details-extra-title-details {
         width: 45%;
         font-size: 0.938rem;
@@ -220,5 +230,13 @@
     }
     .single-movie-genres-small {
         width: 50%;
+    }
+
+    .single-movie-container {
+        width: 90%;
+        margin: auto;
+    }
+    .single-movie-subtitle {
+        text-decoration: underline;
     }
 }

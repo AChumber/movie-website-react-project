@@ -34,3 +34,9 @@
         width: 95%;
     }
 }
+@media only screen and (max-width: 576px) {
+    .single-movie-details-table {
+        margin: 0.5rem 0rem 1rem 0rem;
+        width: 100%;
+    }
+}

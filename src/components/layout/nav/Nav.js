@@ -29,7 +29,8 @@ const Nav = () => {
         <header>
             <nav className="nav">
                 <Link to="/"><img className="logo" src={ logo } alt='Movies Logo'/></Link>
-                <div className="nav-toggle-menu-btn" onClick={() => setIsToggleLinks(!isToggleLinks)}>
+                <div className={`nav-toggle-menu-btn ${isToggleLinks ? 'nav-toggle-menu-btn-active' : ''}`} 
+                    onClick={() => setIsToggleLinks(!isToggleLinks)}>
                     <div className={ isToggleLinks ? "toggle" : "" } id="line1"></div>
                     <div className={ isToggleLinks ? "toggle" : "" } id="line2"></div>
                     <div className={ isToggleLinks ? "toggle" : "" } id="line3"></div>

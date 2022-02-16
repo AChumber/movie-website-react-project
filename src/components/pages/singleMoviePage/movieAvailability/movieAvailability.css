@@ -24,19 +24,9 @@
         font-size: 0.9rem;
     }
 }
-@media only screen and (max-width: 992px) {
-    
-}
-
-@media only screen and (max-width: 894px) {
-    
-}
-@media only screen and (max-width: 768px) {
-    
-}
 
 @media only screen and (max-width: 576px) {
     .movie-provider {
-        width: 3rem;
+        width: 5rem;
     }
 }

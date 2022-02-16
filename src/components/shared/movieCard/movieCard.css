@@ -94,7 +94,8 @@
     .movie-card-container {
         background-color: rgba(250,250,250, 1);
         border-radius: 6px;
-        padding: 1rem
+        padding: 1rem;
+        margin-bottom: 0.5rem;
     }
     .movie-card-navigator {
         height: 90%;
@@ -127,7 +128,7 @@
     .movie-card-add-btn {
         opacity: 1;
         transform: translateY(0);
-        height: 4vh;
+        height: 5vh;
         border-radius: 0 0 5px 5px;
         display: block;
         margin: auto;

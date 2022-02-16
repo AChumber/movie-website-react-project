@@ -5,3 +5,8 @@
 .more-results-btn {
     margin-top: 4rem;
 }
+@media only screen and (max-width: 650px) {
+    .list-of-movies-grid-container {
+        padding: 0.5rem;
+    }
+}
