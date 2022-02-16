@@ -1,3 +1,6 @@
+# Live Demo
+A live demonstration of this project can be found at https://achumber.github.io/movie-website-react-project/ . Hosted with Github Pages 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
