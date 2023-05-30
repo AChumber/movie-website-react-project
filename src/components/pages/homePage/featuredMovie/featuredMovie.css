@@ -2,13 +2,19 @@
     min-height: 70vh;
     position: relative;
 }
-.featured-movie-bg-img {
-    min-height: 100%;
-    width: 100%;
+.featured-movie-bg-img-container {
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
+    height: 85vh;
+    width: 100%;
     z-index: 1;
+}
+.featured-movie-bg-img-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(1.5px);
 }
 .featured-movie-details {
     color: white;
