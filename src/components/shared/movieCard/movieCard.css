@@ -2,7 +2,7 @@
     position: relative;
     margin-bottom: 0.15rem;
     cursor: pointer;
-    width: 15rem;
+    width: 12rem;
     height: 100%;
 }
 .movie-card-navigator {
@@ -42,6 +42,8 @@
 .movie-card-img {
     height: 100%;
     width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 .movie-card-title {
     font-weight: bold;
