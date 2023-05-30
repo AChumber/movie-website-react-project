@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/movie-website-react-project/static/css/main.96900227.chunk.css",
-    "main.js": "/movie-website-react-project/static/js/main.2b0c3c41.chunk.js",
-    "main.js.map": "/movie-website-react-project/static/js/main.2b0c3c41.chunk.js.map",
+    "main.css": "/movie-website-react-project/static/css/main.4590dee0.chunk.css",
+    "main.js": "/movie-website-react-project/static/js/main.628b6b16.chunk.js",
+    "main.js.map": "/movie-website-react-project/static/js/main.628b6b16.chunk.js.map",
     "runtime-main.js": "/movie-website-react-project/static/js/runtime-main.87133e8b.js",
     "runtime-main.js.map": "/movie-website-react-project/static/js/runtime-main.87133e8b.js.map",
     "static/css/2.a4cc8fde.chunk.css": "/movie-website-react-project/static/css/2.a4cc8fde.chunk.css",
-    "static/js/2.d6affdfe.chunk.js": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js",
-    "static/js/2.d6affdfe.chunk.js.map": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js.map",
+    "static/js/2.0a6a8742.chunk.js": "/movie-website-react-project/static/js/2.0a6a8742.chunk.js",
+    "static/js/2.0a6a8742.chunk.js.map": "/movie-website-react-project/static/js/2.0a6a8742.chunk.js.map",
     "index.html": "/movie-website-react-project/index.html",
     "static/css/2.a4cc8fde.chunk.css.map": "/movie-website-react-project/static/css/2.a4cc8fde.chunk.css.map",
-    "static/css/main.96900227.chunk.css.map": "/movie-website-react-project/static/css/main.96900227.chunk.css.map",
-    "static/js/2.d6affdfe.chunk.js.LICENSE.txt": "/movie-website-react-project/static/js/2.d6affdfe.chunk.js.LICENSE.txt",
+    "static/css/main.4590dee0.chunk.css.map": "/movie-website-react-project/static/css/main.4590dee0.chunk.css.map",
+    "static/js/2.0a6a8742.chunk.js.LICENSE.txt": "/movie-website-react-project/static/js/2.0a6a8742.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/movie-website-react-project/static/media/bootstrap-icons.38c4d249.woff",
-    "static/media/chevron.e21eb26e.svg": "/movie-website-react-project/static/media/chevron.e21eb26e.svg",
-    "static/media/movies-logo.7792ac02.svg": "/movie-website-react-project/static/media/movies-logo.7792ac02.svg",
+    "static/media/chevron.4265fd2d.svg": "/movie-website-react-project/static/media/chevron.4265fd2d.svg",
+    "static/media/movies-logo.52c5c00a.svg": "/movie-website-react-project/static/media/movies-logo.52c5c00a.svg",
     "static/media/undraw_home_cinema_l7yl.861dd5ff.svg": "/movie-website-react-project/static/media/undraw_home_cinema_l7yl.861dd5ff.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.87133e8b.js",
     "static/css/2.a4cc8fde.chunk.css",
-    "static/js/2.d6affdfe.chunk.js",
-    "static/css/main.96900227.chunk.css",
-    "static/js/main.2b0c3c41.chunk.js"
+    "static/js/2.0a6a8742.chunk.js",
+    "static/css/main.4590dee0.chunk.css",
+    "static/js/main.628b6b16.chunk.js"
   ]
 }
