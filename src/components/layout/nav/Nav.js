@@ -4,7 +4,7 @@ import './nav.css';
 import logo from './movies-logo.svg';
 import Search from './search/Search';
 import { CSSTransition } from 'react-transition-group';
-
+//CSS for translucent navbar at top of page then opaque when scroll
 const Nav = () => {
     const [isToggleSearch, setIsToggleSearch] = useState(false);
     const [isToggleLinks, setIsToggleLinks] = useState(false);
