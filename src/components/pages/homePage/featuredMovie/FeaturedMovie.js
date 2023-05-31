@@ -17,18 +17,12 @@ const FeaturedMovie = () => {
     }, [dispatch, trendingList.length])
 
     return (
-        (!isLoading && popularMovie.hasOwnProperty('title')) ? (
+        (!isLoading && popularMovie?.hasOwnProperty('title')) ? (
             <>
             <div className='featured-movie-bg-img-container'>
                 <img src={`https://image.tmdb.org/t/p/original${popularMovie.backdrop_path}`} alt='' />
             </div>
             <div className="featured-movie">
-            {/* <div className="featured-movie-bg-img" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${popularMovie.backdrop_path})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                filter: 'blur(0px)' 
-            }}></div> */}
                 <div className="featured-movie-details">
                     <div className='featured-movie-poster-container'>
                         <img className="featured-movie-poster" src={'https://image.tmdb.org/t/p/w400'+popularMovie.poster_path} alt={`${popularMovie.title} poster`} />

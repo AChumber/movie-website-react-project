@@ -28,8 +28,8 @@ export const trendingMoviesSlice = createSlice({
             state.isLoading = true;
         },
         [fetchTrendingList.fulfilled]: (state, action) => {
-            state.trendingList = action.payload;
-            state.popularMovie = state.trendingList[Math.floor(Math.random() * state.trendingList.length)];
+            state.trendingList = action.payload ?? [];
+            state.popularMovie = state.trendingList[Math.floor(Math.random() * state.trendingList?.length ?? 0)];
             state.isLoading = false;
         },
         [fetchTrendingList.rejected]: (state, action) => {

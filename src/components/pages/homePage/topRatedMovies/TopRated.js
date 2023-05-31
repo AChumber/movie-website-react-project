@@ -19,7 +19,7 @@ const TopRated = () => {
             </div>
             {
                 !isLoading ? (
-                    <HorizontalMoviesList list={ topRatedMovies.results.slice(0, 10) } />
+                    <HorizontalMoviesList list={ topRatedMovies.results?.slice(0, 10) ?? [] } />
                 ) : (
                     <SkeletonHorizontalList />
                 )
